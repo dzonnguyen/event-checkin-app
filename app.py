@@ -4,6 +4,7 @@ import pandas as pd
 
 app = Flask(__name__)
 app.secret_key = 'TuMeu-3010'
+app.permanent_session_lifetime = timedelta(hours=1)
 
 APP_PW = 'vietx2025'
 
@@ -11,6 +12,7 @@ APP_PW = 'vietx2025'
 def login():
     if request.method == 'POST':
         if request.form['password'] == APP_PW:
+            session.permanent = True
             session['logged_in'] = True
             return redirect(url_for('home'))
         else:
