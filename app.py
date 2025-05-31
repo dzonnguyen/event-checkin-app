@@ -4,7 +4,7 @@ import pandas as pd
 
 app = Flask(__name__)
 app.secret_key = 'TuMeu-3010'
-app.permanent_session_lifetime = timedelta(hours=1)
+app.permanent_session_lifetime = datetime.timedelta(hours=1)
 
 APP_PW = 'vietx2025'
 
