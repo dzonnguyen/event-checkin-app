@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vietX Check-In</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1efe7;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .logo {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .logo img {
+      width: 150px;
+      height: auto;
+    }
+
+    .since {
+      font-size: 0.8em;
+      color: #555;
+      margin-top: 4px;
+    }
+
+    h1 {
+      margin: 30px 0 20px;
+      font-size: 24px;
+    }
+
+    .button-container {
+      width: 90%;
+      max-width: 400px;
+    }
+
+    .btn {
+      display: block;
+      background-color: #3A3A3A;
+      color: white;
+      border: 1px solid #3A3A3A;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 16px;
+      text-align: left;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #bdbdbd;
+    }
+
+    .btn-title {
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+
+    .btn-desc {
+      font-size: 0.9em;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logo">
+    <img src="{{ url_for('static', filename='vietX.png') }}" alt="vietX Logo">
+  </div>
+
+  <h1>Event: Dấu Lặng Đơn</h1>
+
+  <div class="button-container">
+    <a href = "{{ url_for('check_guest_info') }}" class="btn">
+        <div class="btn-title">Check Guest Info</div>
+        <div class="btn-desc">Check Information of the guest</div>
+    </a>
+    
+    <a href = "{{ url_for('manual_checkin') }}" class="btn">
+      <div class="btn-title">Manual Check-In</div>
+      <div class="btn-desc">Check-in the guest manually</div>
+    </a>
+
+    <a href = "{{ url_for('show_checkins') }}" class="btn">
+      <div class="btn-title">Checked-In</div>
+      <div class="btn-desc">List of already checked-in guests</div>
+    </a>
+
+    <a href = "{{ url_for('show_not_there') }}" class="btn">
+      <div class="btn-title">Missing</div>
+      <div class="btn-desc">Guests have not arrived</div>
+    </a>
+
+    <a href = "{{ url_for('questions') }}" class="btn">
+      <div class="btn-title">Questions</div>
+      <div class="btn-desc">questions of the guest</div>
+    </a>
+
+    <a href="{{ url_for('logout') }}" class="btn">
+        <div class="btn-title">Logout</div>
+    </a>
+
+  </div>
+
+</body>
+</html>

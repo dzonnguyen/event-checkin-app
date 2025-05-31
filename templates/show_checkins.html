@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Check-in Data</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1efe7;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn-back {
+      background-color: #444;
+      color: white;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-bottom: 20px;
+      font-size: 1em;
+    }
+
+    h1 {
+      font-size: 1.6em;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .table-container {
+      width: 100%;
+      max-width: 1000px;
+      overflow-x: auto;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .styled-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9em;
+      min-width: 600px;
+    }
+
+    .styled-table th,
+    .styled-table td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .styled-table thead {
+      background-color: #3A3A3A;
+      color: #fff;
+    }
+
+    .styled-table tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    .styled-table tbody tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 10px;
+      }
+
+      .btn-back {
+        width: 100%;
+        text-align: center;
+        font-size: 1em;
+      }
+
+      .styled-table th,
+      .styled-table td {
+        padding: 10px;
+        font-size: 0.85em;
+      }
+
+      h1 {
+        font-size: 1.4em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <a class="btn-back" href="{{ url_for('home') }}">Back to Home</a>
+
+  <h1>Check-in Data</h1>
+
+  <div class="table-container">
+    {{ table_html | safe }}
+  </div>
+
+</body>
+</html>
