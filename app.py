@@ -71,7 +71,14 @@ def check_guest_info():
         else:
             return "<h2>Invalid check-in. Invalid ID.</h2>"  
     return render_template('check_guest.html')    
-
+#all Guest Information
+@app.route('/all_guest')
+@login_required
+def all_guest():
+    temp = p_data[['id','name','email','mobile','job', 'topics']]
+    html = temp.to_html(classes = 'styled-table', index = False, justify = 'center') 
+    return render_template('show_checkins.html', table_html = html)
+    
 # The endpoint that will be triggered by scanning QR
 @app.route('/checkin')
 @login_required
@@ -125,6 +132,7 @@ def questions():
     html = temp.to_html(classes = 'styled-table', index = False, justify = 'center') 
     return render_template('show_checkins.html', table_html = html)
 
+
 @app.route('/manual_checkin', methods=['GET', 'POST'])
 @login_required
 def manual_checkin():
@@ -152,6 +160,17 @@ def manual_checkin():
         else:
             return "<h2>Invalid check-in. Invalid ID.</h2>"  
     return render_template('manual_check-in.html')
+
+@app.route('/event_info')
+@login_required
+def event_info():
+    return render_template('event_info.html')
+
+@app.route('/team')
+@login_required
+def team():
+    return render_template('team.html')
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True, use_reloader=False)
