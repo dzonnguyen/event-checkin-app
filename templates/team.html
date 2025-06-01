@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Meet the Team</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1efe7;
+      margin: 0;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 30px;
+    }
+
+    .team-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 800px;
+      width: 100%;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .card img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+
+    .name {
+      font-size: 1.1em;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .role {
+      font-size: 0.95em;
+      color: #666;
+      margin-bottom: 10px;
+    }
+
+    .description {
+      font-size: 0.9em;
+      color: #333;
+    }
+
+    .back-btn {
+      margin-top: 30px;
+      padding: 10px 16px;
+      background-color: #333;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+
+    .back-btn:hover {
+      background-color: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Meet the Team</h1>
+
+  <div class="team-container">
+    <div class="card">
+      <img src="{{ url_for('static', filename='Duy.jpg') }}" alt="Admin 1" />
+      <div class="name">Nguyễn Thái Duy</div>
+      <div class="role">Frankfurt - Germany</div>
+      <p class="description">Phụ trách truyền thông. Phụ trách hậu cần cho diễn giả.</p>
+      <p class="description">Tel: +49 176 81459633</p>
+    </div>
+    <div class="card">
+      <img src="{{ url_for('static', filename='Trang.jpg') }}" alt="Admin 2" />
+      <div class="name">Phạm Minh Trang</div>
+      <div class="role">Wageningen - Netherland</div>
+      <p class="description">Phụ trách nội dung ý tưởng. Phụ trách bữa trưa của sự kiện</p>
+      <p class="description">Tel: +31 6 28594449</p>
+    </div>
+    <div class="card">
+      <img src="{{ url_for('static', filename='Tu.jpg') }}" alt="Admin 3" />
+      <div class="name">Tô Thanh Tú</div>
+      <div class="role">Frankfut - Germany</div>
+      <p class="description">Phụ trách thông tin hội trường. Phụ trách đưa đón diễn giả</p>
+      <p class="description">Tel: +49 151 68192889</p>
+    </div>
+    <div class="card">
+      <img src="{{ url_for('static', filename='Khanh.jpg') }}" alt="Admin 4" />
+      <div class="name">Phạm Thùy Khanh</div>
+      <div class="role">Leipzig - Germany</div>
+      <p class="description">Phụ trách thuê mặt bằng. Hỗ trợ hậu cần. Điều phối chương trình</p>
+      <p class="description">Tel: +49 176 75871051</p>
+    </div>
+     <div class="card">
+      <img src="{{ url_for('static', filename='Thao.jpg') }}" alt="Admin 4" />
+      <div class="name">Thảo Lai</div>
+      <div class="role">Hamburg - Germany</div>
+      <p class="description">Photographer</p>
+      <p class="description">Tel: .tbd</p>
+    </div>
+  </div>
+
+  <a href="{{ url_for('home') }}" class="back-btn">Back to Home</a>
+
+</body>
+</html>

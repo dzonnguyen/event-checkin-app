@@ -80,11 +80,16 @@
   <h1>Event: Dấu Lặng Đơn</h1>
 
   <div class="button-container">
+    <a href = "{{ url_for('all_guest') }}" class="btn">
+        <div class="btn-title">Guest Info</div>
+        <div class="btn-desc">Information of all guests</div>
+    </a>
+
     <a href = "{{ url_for('check_guest_info') }}" class="btn">
         <div class="btn-title">Check Guest Info</div>
         <div class="btn-desc">Check Information of the guest</div>
     </a>
-    
+
     <a href = "{{ url_for('manual_checkin') }}" class="btn">
       <div class="btn-title">Manual Check-In</div>
       <div class="btn-desc">Check-in the guest manually</div>
@@ -97,16 +102,27 @@
 
     <a href = "{{ url_for('show_not_there') }}" class="btn">
       <div class="btn-title">Missing</div>
-      <div class="btn-desc">Guests have not arrived</div>
+      <div class="btn-desc">Guests have not arrived yet</div>
     </a>
 
     <a href = "{{ url_for('questions') }}" class="btn">
       <div class="btn-title">Questions</div>
-      <div class="btn-desc">questions of the guest</div>
+      <div class="btn-desc">Questions of the guest</div>
+    </a>
+
+    <a href="{{ url_for('event_info') }}" class="btn">
+        <div class="btn-title">Event Info</div>
+        <div class="btn-desc">Information of the event</div>
+    </a>
+
+    <a href = "{{ url_for('team') }}" class="btn">
+      <div class="btn-title">Team</div>
+      <div class="btn-desc">Contact Information of the team</div>
     </a>
 
     <a href="{{ url_for('logout') }}" class="btn">
         <div class="btn-title">Logout</div>
+        <div class="btn-desc">Logout of the webapp</div>
     </a>
 
   </div>
